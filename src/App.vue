@@ -25,7 +25,7 @@
       text-color="#fff"
         :router="true"
       active-text-color="#2464C8">
-              
+               
        <el-menu-item index="/">
 
     <span slot="title">零配件管理</span>
@@ -37,9 +37,9 @@
 
          
                     
-                 <el-menu-item index="/user_msg">
+                 <el-menu-item index="/esj">
 
-    <span slot="title">二手手机管理</span>
+    <span slot="title">二手机管理</span>
   </el-menu-item>          
  
 
@@ -83,14 +83,7 @@
 
         },
         methods: {
-            out_back() { //退出登录
-                this.$cookies.remove("user_id");
-                this.hf('admin?redirect=' + this.$route.name)
-                this.$message({
-                    message: '退出登录成功',
-                    type: 'success'
-                });
-            },
+          
             handleOpen(e){
                 console.log(2);
             },
