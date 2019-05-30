@@ -33,6 +33,15 @@ export default new Router({
                     },
                     component: () =>
                         import ('@/lpj/add_lpj')
+            }, {
+                    name: "lpj/mingxi",
+                    path: 'mingxi',
+                    meta: {
+                        requireAuth: true,
+                        title: '零配件明细'
+                    },
+                    component: () =>
+                        import ('@/lpj/mingxi')
             }
             ]
 

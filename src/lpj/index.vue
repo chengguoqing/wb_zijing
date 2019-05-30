@@ -82,7 +82,7 @@
                   <el-col :span="4" v-for="(sd,idx) in list_Sdf" class="mt20"  >
     
      <el-card :body-style="{ padding: '0px' }" class="pr dfgd_sd_df " :class="sd.cls">
-     <section @click="sd.cls?sd.cls='':sd.cls='act'">
+     <section @click="hf('mingxi')">
          <p class="pr">
                  <img src="../assets/img/gouxuan.png" class="goxuuan_der">
          <img src="../assets/img/lingjian.jpg" class="image w100 cz">
