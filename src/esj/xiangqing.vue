@@ -10,13 +10,7 @@
         
         <section class="sd_jh_drr">
             
-             <el-image
-     class="w100 h100"
-     src="http://duxinggj.com/www/static/img/2.jpg"
-      fit="cover"></el-image>
             
-           
-<!--
     <section  style="height: 300px">
     
       <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
@@ -37,7 +31,7 @@
         <swiper-slide class="slide-5"></swiper-slide>
       </swiper>
     </section>
--->
+
   </section>
             
         <section class="ov pl20">

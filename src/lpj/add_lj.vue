@@ -9,7 +9,7 @@
     
     <section class="br pt10 pm10 pd br mt20 yj4">
         <p class="bghs fz14 pt10 pm10 pd">
-            机型信息
+            机型信息 
         </p>
         <section class="sd_df_er pt40">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px"  class="demo-ruleForm">
@@ -23,7 +23,22 @@
                           <el-input  placeholder="年份，机型，产地等信息" v-model="ruleForm.ji_ms" ></el-input>
              </el-form-item> 
             
-            <el-form-item label="零配件列表"  prop="">
+            
+            
+            <el-form-item label="是否为布套"  prop="ji_name">
+                       <section class=" ">
+      <el-radio v-model="ruleForm.is_sdfg" label="是"></el-radio>
+                         <el-radio  v-model="ruleForm.is_sdfg" label="否"></el-radio>
+            </section>
+                        
+              
+                <p class="qc"></p>
+             </el-form-item> 
+            
+            
+            
+            
+            <el-form-item label="零配件列表"  prop="" v-if="ruleForm.is_sdfg=='是'">
                 <section class="f_b">
     
        
@@ -33,6 +48,27 @@
                          </section>
                 
                 <span class="ls ml10 fg_jh_dertt sz" @click="ssd_sd">+继续添加件号</span>
+                
+              
+                <p class="qc"></p>
+                
+                <p class="mt40">
+       <el-button type="primary"  @click="submitForm">提交</el-button>
+    </p>
+             </el-form-item> 
+            
+            
+            
+             <el-form-item label="部套列表"  prop="" v-if="ruleForm.is_sdfg=='否'">
+                <section class="f_b">
+    
+       
+                         <section class="dsf_dd_ert mb10" v-for="sd in ruleForm.ji_list ">
+                                <el-input  placeholder="只能输入件号" ></el-input>
+                        </section>
+                         </section>
+                
+                <span class="ls ml10 fg_jh_dertt sz" @click="ssd_sd">+继续添加部套ID</span>
                 
               
                 <p class="qc"></p>
@@ -57,6 +93,7 @@
                     ji_id: "",
                     ji_name: "",
                     ji_ms: "",
+                    is_sdfg:"是",
                     ji_list: [{}]
                 },
                 rules: {

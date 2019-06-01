@@ -9,14 +9,14 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: '',
+            name: '/',
             component: index,
             meta: {
                 requireAuth: true,
                 title: '零配件管理'
             },
             children: [{
-                    name: "lpj/add_lj",
+                    name: "/",
                     path: 'add_lj',
                     meta: {
                         requireAuth: true,
@@ -25,7 +25,7 @@ export default new Router({
                     component: () =>
                         import ('@/lpj/add_lj')
             }, {
-                    name: "lpj/add_lpj",
+                    name: "/",
                     path: 'add_lpj',
                     meta: {
                         requireAuth: true,
@@ -34,7 +34,7 @@ export default new Router({
                     component: () =>
                         import ('@/lpj/add_lpj')
             }, {
-                    name: "lpj/mingxi",
+                    name: "/",
                     path: 'mingxi',
                     meta: {
                         requireAuth: true,
@@ -47,14 +47,14 @@ export default new Router({
 
         }, {
             path: '/esj',
-            name: 'esj',
+            name: '/esj',
             component: esj,
             meta: {
                 requireAuth: true,
                 title: '二手机管理'
             },
             children: [{
-                name: "esj/add_esj",
+                name: "/esj",
                 path: 'add_esj',
                 meta: {
                     requireAuth: true,
@@ -62,6 +62,15 @@ export default new Router({
                 },
                 component: () =>
                     import ('@/esj/add_esj')
+            },{
+                name: "/esj",
+                path: 'xiangqing',
+                meta: {
+                    requireAuth: true,
+                    title: '详情'
+                },
+                component: () =>
+                    import ('@/esj/xiangqing')
             }]
 
         }

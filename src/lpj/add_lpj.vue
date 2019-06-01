@@ -65,6 +65,7 @@
       <el-radio v-model="ruleForm.is_sdfg" label="是"></el-radio>
                          <el-radio  v-model="ruleForm.is_sdfg" label="否"></el-radio>
             </section>
+                        <section v-if='ruleForm.is_sdfg=="是"'>
                         
                         <section class="f_b">
     
@@ -75,7 +76,7 @@
                          </section>
                 
                 <span class="ls ml10 fg_jh_dertt sz" @click="ssd_sd(2)">+继续添加件号</span>
-                
+                </section>
               
                 <p class="qc"></p>
              </el-form-item> 
@@ -92,19 +93,19 @@
         </p>
         <section class="sd_df_er pt40">
              <el-form :model="ruleForm_er" label-width="120px"  class="demo-ruleForm">
-            <el-form-item label="规格"  prop="ji_id">
-                          <el-input  placeholder="" v-model="ruleForm.ji_id" ></el-input>
+            <el-form-item label="规格"  prop="guige">
+                          <el-input  placeholder="" v-model="ruleForm_er.guige" ></el-input>
              </el-form-item> 
-                        <el-form-item label="价格"  prop="ji_id">
+                        <el-form-item label="价格"  prop="jaige">
                          
- <el-input placeholder="请输入价格" v-model="input1">
+ <el-input placeholder="请输入价格" v-model="ruleForm_er.jaige">
     <template slot="prepend">￥</template>
   </el-input>
 
 
              </el-form-item> 
-                        <el-form-item label="库存"  prop="ji_id">
-                          <el-input  placeholder="" v-model="ruleForm.ji_id" ></el-input>
+                        <el-form-item label="库存"  prop="kucun">
+                          <el-input  placeholder="" v-model="ruleForm_er.kucun" ></el-input>
              </el-form-item> 
                  
     </el-form>
@@ -133,6 +134,12 @@
                     pj_img_e:"",
                     is_sdfg:"是",
                     ji_list_er:[{},{}]
+                },
+                ruleForm_er:{
+                    guige:"",
+                    jaige:"",
+                    kucun:""
+                    
                 },
                 rules: {
                     pj_name: [{

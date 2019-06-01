@@ -17,7 +17,7 @@
             
             
             <el-menu
-      :default-active="$route.path"
+      :default-active="$route.name"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
@@ -45,7 +45,6 @@
 
     
     </el-menu>
-
 
 
 

@@ -25,7 +25,7 @@
         </el-row>
                 
             <el-row :gutter="10" class="mt20">
-                <el-col :span="4">
+                <el-col :span="6">
            <el-row :gutter="20">
                <el-col :span="5" class="z6 fz14 pt10 tr">品牌</el-col>
             <el-col :span="19">
@@ -37,9 +37,19 @@
            </el-row>
             </el-col>
                 
+                        <el-col :span="6">
+           <el-row :gutter="20">
+               <el-col :span="5" class="z6 fz14 pt10 tr">类别</el-col>
+            <el-col :span="19">
+                    <el-select v-model="pih_d"   placeholder="请选择类别" class="w100">
+                                <el-option label="类别1" value="1"></el-option>
+                                 <el-option label="类别2" value="2"></el-option>
+                        </el-select>
+    </el-col>        
+           </el-row>
+            </el-col>
                 
-                
-                     <el-col :span="4">
+                     <el-col :span="6">
            <el-row :gutter="20">
                <el-col :span="5" class="z6 fz14 pt10 tr">机型</el-col>
             <el-col :span="19">
@@ -53,7 +63,7 @@
                 
                 
                 
-                     <el-col :span="4">
+                     <el-col :span="6">
            <el-row :gutter="20">
                <el-col :span="5" class="z6 fz14 pt10 tr">布套</el-col>
             <el-col :span="19">
@@ -65,10 +75,7 @@
            </el-row>
             </el-col>
                 
-                   <el-col :span="4">
-                       
-                 <el-button type="primary">筛选</el-button>    <span class="ls fz14  sz ml10">清空产品删选条件</span>       
-    </el-col>
+                  
                 
                 
                 
@@ -78,28 +85,31 @@
         </section>
                 
 
-              <el-row :gutter="20" >
+              <el-row :gutter="10" >
                   <el-col :span="4" v-for="(sd,idx) in list_Sdf" class="mt20"  >
     
-     <el-card :body-style="{ padding: '0px' }" class="pr dfgd_sd_df " :class="sd.cls">
+     <el-card :body-style="{ padding: '0px' }" class="pr dfgd_sd_df " >
      <section @click="hf('mingxi')">
          <p class="pr">
-                 <img src="../assets/img/gouxuan.png" class="goxuuan_der">
+               <span @click.stop="sd.cls?sd.cls='':sd.cls='act'">
+                <img src="../assets/img/gou.png" class="fdsf_jh_deer" v-if="sd.cls=='act'">
+             <i class="fdsf_jh_deer ab" v-else></i>
+            </span>
          <img src="../assets/img/lingjian.jpg" class="image w100 cz">
         </p>
  
       <div class="pd pt10">
-        <p class="fz16 z3">
+        <p class="fz14 z3">
             件号:238445644
         </p>
-           <p class="fz16 z3 mt5">
+           <p class="fz14 z3 mt5">
             图号:238445644
         </p>
           
-        <el-row class="pt10 pm20">
-            <el-col :span="8" class="red fz16">￥2349</el-col>
-         <el-col :span="8" class="z9 fz14 cen">库存27</el-col>
-                     <el-col :span="8" class="tr fz14 ls sz"><span  @click.stop="hf('add_lpj')">编辑</span> </el-col>
+        <el-row class="pt10 pm10">
+            <el-col :span="8" class="red fz12">￥2349</el-col>
+         <el-col :span="8" class="z9 fz12 cen">库存27</el-col>
+                     <el-col :span="8" class="tr fz12 ls sz"><span  @click.stop="hf('add_lpj')">编辑</span> </el-col>
         </el-row>  
           
           
@@ -134,6 +144,7 @@
                 pih_a: "",
                 pih_b: "",
                 pih_c: "",
+                pih_d:"",
                 checked: false,
                 list_Sdf: [{
                     cls: "",

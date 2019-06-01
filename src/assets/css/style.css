@@ -96,7 +96,20 @@
     width: 600px;
 }
 
-
+.fdsf_jh_deer{
+    width: 25px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background: #fff;
+    border-radius: 50%;
+}
+.fdsf_jh_deer.ab{
+    width: 25px;
+    height: 25px;
+    border: 1px solid #e0e0e0;
+    z-index: 1000;
+}
 
 
 
